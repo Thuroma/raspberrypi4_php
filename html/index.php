@@ -51,10 +51,10 @@
                 $stmt->bind_param("i", $recipeSelection);
                 $stmt->execute();
                 $result = $stmt->get_result();
-                
+
                 while ($row = $result->fetch_assoc()) {
                     // Process each row
-                    echo $row['name'];
+                    echo "<li>{$row['name']}</li>";
                 }
                 
                 $stmt->close();
