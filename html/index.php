@@ -32,20 +32,20 @@
                 die("Connection failed: " . $conn->connect_error);
             }
 
-            $sql = "SELECT * FROM Recipe";
-            $result = $conn->query($sql);
+            $recipeSelection = 1;
+
+            $sql = "SELECT * FROM Recipe WHERE recipe_id = ?";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("i", $recipeSelection);
+            $stmt->execute();
+            $result = $stmt->get_result();
             
-            if ($result->num_rows > 0) {
-                // Fetch and display each row
-                while ($row = $result->fetch_assoc()) {
-                    echo $row;
-                }
-            } else {
-                echo "No records found";
+            while ($row = $result->fetch_assoc()) {
+                // Process each row
+                echo $row;
             }
             
-            // Close the result set
-            $result->close();
+            $stmt->close();
         ?>
     </section>
 
