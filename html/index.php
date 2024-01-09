@@ -17,6 +17,12 @@
             $greeting = "Hello World";
             echo "<p>{$greeting}</p>";
         ?>
+
+        <br>
+
+        <?php
+            
+        ?>
     </section>
 
     <footer>
