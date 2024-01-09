@@ -42,7 +42,7 @@
             
             while ($row = $result->fetch_assoc()) {
                 // Process each row
-                echo $row;
+                echo $row['name'];
             }
             
             $stmt->close();
