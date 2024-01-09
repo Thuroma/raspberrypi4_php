@@ -31,6 +31,21 @@
             if ($conn->connect_error) {
                 die("Connection failed: " . $conn->connect_error);
             }
+
+            $sql = "SELECT * FROM Recipe";
+            $result = $conn->query($sql);
+            
+            if ($result->num_rows > 0) {
+                // Fetch and display each row
+                while ($row = $result->fetch_assoc()) {
+                    echo $row;
+                }
+            } else {
+                echo "No records found";
+            }
+            
+            // Close the result set
+            $result->close();
         ?>
     </section>
 
