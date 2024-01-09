@@ -21,7 +21,13 @@
         <br>
 
         <?php
-            
+            // Include config file
+            include_once "../config.php";
+
+            // Create Connection
+            $conn = new mysqli($servername, $username, $password, $database);
+
+            echo $conn;
         ?>
     </section>
 
