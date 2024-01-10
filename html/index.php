@@ -45,21 +45,22 @@
                 }
 
 
-                if(class_exists('getAllRecipes')){
-                    echo "Class Found";
-                }else{
-                    echo "Class NOT Found";
-                }
-
+                
                 $recipeManager = new Model\RecipeManager($conn);
-
+                
                 try {
                     $allRecipes = $recipeManager->getAllRecipes();
                     
                     print_r($allRecipes);
-
+                    
                 } catch (Exception $e) {
                     echo "Error: " . $e->getMessage();
+                }
+                
+                if(class_exists('getAllRecipes')){
+                    echo "Class Found";
+                }else{
+                    echo "Class NOT Found";
                 }
             ?>
         </div>
