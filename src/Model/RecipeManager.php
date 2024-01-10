@@ -63,17 +63,7 @@ class RecipeManager {
             throw new Exception("Error fetching recipes: " . $this->db->error);
         }
 
-        $recipes = [];
-
-        while ($row = $result->fetch_assoc()) {
-            $recipes[] = [
-                'id' => $row['recipe_id'],
-                'name' => $row['name'],
-                'ingredients' => $row['ingredient_list'],
-            ];
-        }
-
-        return $recipes;
+        return $result;
         
     }
 }
