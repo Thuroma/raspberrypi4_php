@@ -68,9 +68,6 @@
                             echo "<li class=\"list-group-item\">{$ingredient}</li>";
                         }
                         echo "</ul>";
-
-                        echo "<div class=\"card-body\">";
-                        echo "</div>";
                         echo "</div>";
                     }
                     
