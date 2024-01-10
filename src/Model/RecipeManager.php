@@ -43,17 +43,12 @@ class RecipeManager {
                     Recipe.recipe_id,
                     Recipe.name,
                     Recipe.description,
-                    GROUP_CONCAT(Ingredient.name SEPARATOR ', ') AS ingredient_list,
-                    GROUP_CONCAT(Instruction.instruction SEPARATOR ', ') AS instruction_list
+                    GROUP_CONCAT(Ingredient.name SEPARATOR ', ') AS ingredient_list
                 FROM
-                    Instruction
-                INNER JOIN
-                    RecipeInstruction ON Instruction.instruction_id = RecipeInstruction.instruction_id
-                INNER JOIN
-                    Recipe ON RecipeInstruction.recipe_id = Recipe.recipe_id
-                INNER JOIN
+                    Recipe
+                LEFT JOIN
                     RecipeIngredient ON Recipe.recipe_id = RecipeIngredient.recipe_id
-                INNER JOIN
+                LEFT JOIN
                     Ingredient ON RecipeIngredient.ingredient_id = Ingredient.ingredient_id
                 GROUP BY
                     Recipe.recipe_id
@@ -73,8 +68,7 @@ class RecipeManager {
                 'id' => $row['recipe_id'],
                 'name' => $row['name'],
                 'description' => $row['description'],
-                'ingredients' => $row['ingredient_list'],
-                'instructions' => $row['instruction_list'],
+                'ingredients' => $row['ingredient_list']
             ];
         }
 
