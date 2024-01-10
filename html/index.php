@@ -50,16 +50,17 @@
                 }else{
                     echo "Class NOT Found";
                 }
-                // $recipeManager = new RecipeManager($conn);
 
-                // try {
-                //     $allRecipes = $recipeManager->getAllRecipes();
+                $recipeManager = new Model\RecipeManager($conn);
+
+                try {
+                    $allRecipes = $recipeManager->getAllRecipes();
                     
-                //     print_r($allRecipes);
+                    print_r($allRecipes);
 
-                // } catch (Exception $e) {
-                //     echo "Error: " . $e->getMessage();
-                // }
+                } catch (Exception $e) {
+                    echo "Error: " . $e->getMessage();
+                }
             ?>
         </div>
     </div>
