@@ -47,6 +47,8 @@
 
             <?php
 
+                use Model\getAllRecipes;
+
                 if(class_exists('getAllRecipes')){
                     echo "Class Found";
                 }else{
