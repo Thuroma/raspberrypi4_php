@@ -23,9 +23,7 @@
     <div class="col">
 
     <div class="row">
-        <div id="recipes">
-        
-            <ul>    
+        <div id="recipes">   
 
             <?php
                 // Include config file
@@ -63,10 +61,22 @@
                 } catch (Exception $e) {
                     echo "Error: " . $e->getMessage();
                 }
+
+                
+                $recipeManager = new Model\RecipeManager($conn);
+                
+                try {
+                    $allRecipes = $recipeManager->getRecipeCards();
+                    
+                    
+                    print_r($allRecipes);
+                    
+                } catch (Exception $e) {
+                    echo "Error: " . $e->getMessage();
+                }
                 
             ?>
 
-            </ul>
         </div>
     </div>
 
