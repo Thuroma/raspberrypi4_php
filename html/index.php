@@ -50,8 +50,6 @@
                 
                 try {
                     $allRecipes = $recipeCardManager->getRecipeCards();
-
-                    print_r($allRecipes);
                     
                     foreach ($allRecipes as &$recipe) {
                         echo "<div class=\"card\">";
@@ -107,4 +105,9 @@
 <style>
     <?php include "css/style.css"; ?>
 </style>
+
+<script>
+    <?php include "js/script.js"; ?>
+</script>
+
 </html>
