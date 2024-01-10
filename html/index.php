@@ -62,12 +62,19 @@
                         echo "</div>";
 
                         echo "<ul class=\"list-group list-group-flush\">";
-
                         $ingredient_list = explode(", ", $recipe['ingredients']);
                         foreach ($ingredient_list as &$ingredient) {
                             echo "<li class=\"list-group-item\">{$ingredient}</li>";
                         }
                         echo "</ul>";
+
+                        echo "<ul class=\"list-group list-group-flush\">";
+                        $instruction_list = explode(", ", $recipe['instructions']);
+                        foreach ($instruction_list as &$instruction) {
+                            echo "<li class=\"list-group-item\">{$instruction}</li>";
+                        }
+                        echo "</ul>";
+
                         echo "</div>";
                     }
                     
