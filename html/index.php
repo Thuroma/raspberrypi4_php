@@ -45,29 +45,13 @@
                     die("Connection failed: " . $conn->connect_error);
                 }
 
-
-                
-                $recipeManager = new Model\RecipeManager($conn);
-                
-                try {
-                    $allRecipes = $recipeManager->getAllRecipes();
-                    
-                    
-                    foreach ($allRecipes as &$recipe) {
-                        echo "<li><b>{$recipe['name']}</b></li>";
-                        echo "<li>{$recipe['description']}</li>";
-                    }
-                    
-                } catch (Exception $e) {
-                    echo "Error: " . $e->getMessage();
-                }
-
                 
                 $recipeCardManager = new Model\RecipeManager($conn);
                 
                 try {
                     $allRecipes = $recipeCardManager->getRecipeCards();
-                    
+
+                    print_r($allRecipes);
                     
                     foreach ($allRecipes as &$recipe) {
                         echo "<div class=\"card\">";
