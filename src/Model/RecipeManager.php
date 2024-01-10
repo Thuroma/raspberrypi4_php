@@ -49,11 +49,11 @@ class RecipeManager {
                     Instruction
                 INNER JOIN
                     RecipeInstruction ON Instruction.instruction_id = RecipeInstruction.instruction_id
-                FULL OUTER JOIN
+                INNER JOIN
                     Recipe ON RecipeInstruction.recipe_id = Recipe.recipe_id
-                LEFT OUTER JOIN
+                INNER JOIN
                     RecipeIngredient ON Recipe.recipe_id = RecipeIngredient.recipe_id
-                LEFT OUTER JOIN
+                INNER JOIN
                     Ingredient ON RecipeIngredient.ingredient_id = Ingredient.ingredient_id
                 GROUP BY
                     Recipe.recipe_id
