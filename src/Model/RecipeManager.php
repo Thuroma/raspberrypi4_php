@@ -51,7 +51,7 @@ class RecipeManager {
                 LEFT JOIN
                     Ingredient ON RecipeIngredient.ingredient_id = Ingredient.ingredient_id
                 GROUP BY
-                    Recipes.recipe_id, Recipes.name, Recipes.description
+                    Recipe.recipe_id, Recipe.name, Recipe.description
                 ORDER BY
                     Recipe.recipe_id";
 
