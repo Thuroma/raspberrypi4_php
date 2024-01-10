@@ -46,8 +46,6 @@ class RecipeManager {
                     GROUP_CONCAT(Ingredient.name SEPARATOR ', ') AS ingredient_list
                 FROM
                     Recipe
-                WHERE
-                    recipe_id = 1
                 LEFT JOIN
                     RecipeIngredient ON Recipe.recipe_id = RecipeIngredient.recipe_id
                 LEFT JOIN
@@ -57,13 +55,23 @@ class RecipeManager {
                 ORDER BY
                     Recipe.recipe_id";
 
-        $result = $this->db->query($sql);
+        $result = $this->conn->query($sql);
 
         if (!$result) {
             throw new Exception("Error fetching recipes: " . $this->db->error);
         }
 
-        return $result;
+        $recipes = [];
+
+        while ($row = $result->fetch_assoc()) {
+            $recipes[] = [
+                'id' => $row['recipe_id'],
+                'name' => $row['name'],
+                'ingredients' => $row['ingredient_list'],
+            ];
+        }
+
+        return $recipes;
         
     }
 }
