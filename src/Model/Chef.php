@@ -2,21 +2,21 @@
 
 namespace Model;
 
-class Ingredient
+class Chef
 {
     // Attributes
-    private $ingredient_id;
+    private $chef_id;
     private $name;
 
     // Constructors
-    public function __construct($ingredient_id, $name) {
-        $this->ingredient_id = $ingredient_id;
+    public function __construct($chef_id, $name) {
+        $this->chef_id = $chef_id;
         $this->name = $name;
     }
 
     // Getters
     public function getId() {
-        return $this->ingredient_id;
+        return $this->chef_id;
     }
 
     public function getName() {
