@@ -29,6 +29,8 @@
                 // Include config file
                 include_once "../config.php";
 
+                include "./css/style.css";
+
                 include "../src/Model/Chef.php";
                 include "../src/Model/Cook.php";
                 include "../src/Model/CookingActivity.php";
