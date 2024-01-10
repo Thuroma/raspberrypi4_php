@@ -24,7 +24,7 @@
 
     <div class="row">
         <div id="recipes">
-            <?php 
+            <?php
                 // Include config file
                 include_once "../config.php";
 
@@ -35,19 +35,15 @@
                 include "../src/Model/Instruction.php";
                 include "../src/Model/Recipe.php";
                 include "../src/Model/RecipeManager.php";
-                
+
                 // Create Connection
                 $conn = new mysqli($servername, $username, $password, $database);
-                
+
                 // Check connection
                 if ($conn->connect_error) {
                     die("Connection failed: " . $conn->connect_error);
                 }
-            ?>
 
-            <?php
-
-                use Model\getAllRecipes;
 
                 if(class_exists('getAllRecipes')){
                     echo "Class Found";
