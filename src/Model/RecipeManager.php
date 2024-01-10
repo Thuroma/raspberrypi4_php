@@ -43,7 +43,7 @@ class RecipeManager {
                     Recipe.recipe_id,
                     Recipe.name,
                     Recipe.description,
-                    GROUP_CONCAT(Ingredient.name SEPARATOR ', ') AS ingredient_list
+                    GROUP_CONCAT(Ingredient.name SEPARATOR ', ') AS ingredient_list,
                     GROUP_CONCAT(Instruction.instruction SEPARATOR ', ') AS instruction_list
                 FROM
                     Recipe
