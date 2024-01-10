@@ -24,6 +24,9 @@
 
     <div class="row">
         <div id="recipes">
+        
+            <ul>    
+
             <?php
                 // Include config file
                 include_once "../config.php";
@@ -51,18 +54,19 @@
                 try {
                     $allRecipes = $recipeManager->getAllRecipes();
                     
-                    print_r($allRecipes);
+                    
+                    foreach ($allRecipes as &$recipe) {
+                        echo "<li><b>{$recipe['name']}</b></li>";
+                        echo "<li>{$recipe['description']}</li>";
+                    }
                     
                 } catch (Exception $e) {
                     echo "Error: " . $e->getMessage();
                 }
                 
-                if(class_exists('getAllRecipes')){
-                    echo "Class Found";
-                }else{
-                    echo "Class NOT Found";
-                }
             ?>
+
+            </ul>
         </div>
     </div>
 
