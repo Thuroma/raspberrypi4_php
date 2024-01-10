@@ -36,7 +36,7 @@
                 // Include config file
                 include_once "../config.php";
 
-                include '../src/Model/RecipeManager.php';
+                include_once '../src/Model/RecipeManager.php';
 
                 // Create Connection
                 $conn = new mysqli($servername, $username, $password, $database);
@@ -46,24 +46,16 @@
                     die("Connection failed: " . $conn->connect_error);
                 }
 
-                // $recipeSelection = 1;
+                $recipeManager = new RecipeManager($conn);
 
-                // $sql = "SELECT * FROM Recipe WHERE recipe_id = ?";
-                // $stmt = $conn->prepare($sql);
-                // $stmt->bind_param("i", $recipeSelection);
-                // $stmt->execute();
-                // $result = $stmt->get_result();
+                try {
+                    $allRecipes = $recipeManager->getAllRecipes();
+                    
+                    print_r($allRecipes);
 
-                // while ($row = $result->fetch_assoc()) {
-                //     // Process each row
-                //     echo "<li>{$row['name']}</li>";
-                // }
-                
-                // $stmt->close();
-
-                $recipes = getAllRecipes($conn);
-                
-                echo $recipes;
+                } catch (Exception $e) {
+                    echo "Error: " . $e->getMessage();
+                }
             ?>
         </div>
     </div>
