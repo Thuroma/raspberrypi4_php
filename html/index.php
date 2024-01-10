@@ -63,13 +63,13 @@
                 }
 
                 
-                $recipeManager = new Model\RecipeManager($conn);
+                $recipeCardManager = new Model\RecipeManager($conn);
                 
                 try {
-                    $allRecipes = $recipeManager->getRecipeCards();
+                    $recipeCard = $recipeCardManager->getRecipeCards();
                     
                     
-                    print_r($allRecipes);
+                    print_r($recipeCard);
                     
                 } catch (Exception $e) {
                     echo "Error: " . $e->getMessage();

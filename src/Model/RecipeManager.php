@@ -46,6 +46,8 @@ class RecipeManager {
                     GROUP_CONCAT(Ingredient.name SEPARATOR ', ') AS ingredient_list
                 FROM
                     Recipe
+                WHERE
+                    recipe_id = 1
                 LEFT JOIN
                     RecipeIngredient ON Recipe.recipe_id = RecipeIngredient.recipe_id
                 LEFT JOIN
