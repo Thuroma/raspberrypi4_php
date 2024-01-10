@@ -2,8 +2,7 @@
 
 namespace Model;
 
-class RecipeManager
-{
+class RecipeManager {
     // Attribute is the connection to the database
     private $conn;
 
