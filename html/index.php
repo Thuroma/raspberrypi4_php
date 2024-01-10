@@ -25,37 +25,43 @@
     <div class="row">
         <div id="recipes">
             <?php 
-                // PHP code
-                $greeting = "Hello World";
-                echo "<p>{$greeting}</p>";
-            ?>
-
-            <br>
-
-            <?php
                 // Include config file
                 include_once "../config.php";
 
+                include "../src/Model/Chef.php";
+                include "../src/Model/Cook.php";
+                include "../src/Model/CookingActivity.php";
+                include "../src/Model/Ingredient.php";
+                include "../src/Model/Instruction.php";
+                include "../src/Model/Recipe.php";
                 include "../src/Model/RecipeManager.php";
-
+                
                 // Create Connection
                 $conn = new mysqli($servername, $username, $password, $database);
-
+                
                 // Check connection
                 if ($conn->connect_error) {
                     die("Connection failed: " . $conn->connect_error);
                 }
+            ?>
 
-                $recipeManager = new RecipeManager($conn);
+            <?php
 
-                try {
-                    $allRecipes = $recipeManager->getAllRecipes();
-                    
-                    print_r($allRecipes);
-
-                } catch (Exception $e) {
-                    echo "Error: " . $e->getMessage();
+                if(class_exists('getAllRecipes')){
+                    echo "Class Found";
+                }else{
+                    echo "Class NOT Found";
                 }
+                // $recipeManager = new RecipeManager($conn);
+
+                // try {
+                //     $allRecipes = $recipeManager->getAllRecipes();
+                    
+                //     print_r($allRecipes);
+
+                // } catch (Exception $e) {
+                //     echo "Error: " . $e->getMessage();
+                // }
             ?>
         </div>
     </div>
