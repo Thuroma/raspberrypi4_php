@@ -26,11 +26,12 @@ class RecipeManager
         $recipes = [];
 
         while ($row = $result->fetch_assoc()) {
-            $recipes[] = [
-                'id' => $row['recipe_id'],
-                'name' => $row['name'],
-                'description' => $row['description']
-            ];
+            // $recipes[] = [
+            //     'id' => $row['recipe_id'],
+            //     'name' => $row['name'],
+            //     'description' => $row['description']
+            // ];
+            $recipes[] = $row;
         }
 
         return $recipes;

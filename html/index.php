@@ -36,7 +36,7 @@
                 // Include config file
                 include_once "../config.php";
 
-                require_once "../Model/RecipeManager.php";
+                require_once "../src/Model/RecipeManager.php";
 
                 // Create Connection
                 $conn = new mysqli($servername, $username, $password, $database);
