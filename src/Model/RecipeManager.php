@@ -67,6 +67,7 @@ class RecipeManager {
             $recipes[] = [
                 'id' => $row['recipe_id'],
                 'name' => $row['name'],
+                'description' => $row['description'],
                 'ingredients' => $row['ingredient_list'],
             ];
         }
