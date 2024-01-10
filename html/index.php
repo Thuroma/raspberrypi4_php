@@ -66,10 +66,27 @@
                 $recipeCardManager = new Model\RecipeManager($conn);
                 
                 try {
-                    $recipeCard = $recipeCardManager->getRecipeCards();
+                    $allRecipes = $recipeCardManager->getRecipeCards();
                     
                     
-                    print_r($recipeCard);
+                    foreach ($allRecipes as &$recipe) {
+                        echo "<div class=\"card\">";
+
+                        echo "<div class=\"card-body\">";
+                        echo "<h5 class=\"card-title\">{$recipe['name']}</h5>";
+                        echo "<p class=\"card-text\">{$recipe['description']}</p>";
+                        echo "</div>";
+
+                        echo "<ul class=\"list-group list-group-flush\">";
+                        foreach ($recipe['ingredients'] as &$ingredient) {
+                            echo "<li class=\"list-group-item\">$ingredient</li>";
+                        }
+                        echo "</ul>";
+
+                        echo "<div class=\"card-body\">";
+                        echo "</div>";
+                        echo "</div>";
+                    }
                     
                 } catch (Exception $e) {
                     echo "Error: " . $e->getMessage();
