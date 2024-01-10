@@ -47,13 +47,13 @@ class RecipeManager {
                     GROUP_CONCAT(Instruction.instruction SEPARATOR ', ') AS instruction_list
                 FROM
                     Recipe
-                JOIN
+                LEFT JOIN
                     RecipeIngredient ON Recipe.recipe_id = RecipeIngredient.recipe_id
-                JOIN
+                LEFT JOIN
                     Ingredient ON RecipeIngredient.ingredient_id = Ingredient.ingredient_id
-                JOIN
+                LEFT JOIN
                     RecipeInstruction ON Recipe.recipe_id = RecipeInstruction.recipe_id
-                JOIN
+                LEFT JOIN
                     Instruction ON RecipeInstruction.instruction_id = Instruction.instruction_id
                 GROUP BY
                     Recipe.recipe_id, Recipe.name, Recipe.description
