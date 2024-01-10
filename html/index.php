@@ -63,7 +63,7 @@
 
                         echo "<ul class=\"list-group list-group-flush\">";
                         foreach ($recipe['ingredients'] as &$ingredient) {
-                            echo "<li class=\"list-group-item\">$ingredient</li>";
+                            echo "<li class=\"list-group-item\">{$ingredient}</li>";
                         }
                         echo "</ul>";
 
