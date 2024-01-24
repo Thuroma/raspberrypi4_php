@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
-    <div class="container">
+    <div class="container main-content">
         
     <header>
         <h1>Welcome to My PHP Page</h1>
@@ -66,11 +66,11 @@
                         }
                         echo "</ul>";
 
-                        echo "<ul class=\"list-group list-group-flush\">";
-                        $instruction_list = explode(", ", $recipe['instructions']);
-                        foreach ($instruction_list as &$instruction) {
-                            echo "<li class=\"list-group-item\">{$instruction}</li>";
-                        }
+                        // echo "<ul class=\"list-group list-group-flush\">";
+                        // $instruction_list = explode(", ", $recipe['instructions']);
+                        // foreach ($instruction_list as &$instruction) {
+                        //     echo "<li class=\"list-group-item\">{$instruction}</li>";
+                        // }
                         echo "</ul>";
 
                         echo "</div>";
