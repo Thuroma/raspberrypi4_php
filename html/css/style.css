@@ -4,8 +4,8 @@ html, body {
 }
 
 .main-content {
-    background: red;
     height: 100vh;
+    width: 100vw;
 }
 
 .card {
