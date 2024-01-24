@@ -5,9 +5,12 @@ html, body {
 
 .main-content {
     height: 100vh;
-    overflow: auto;
 }
 
 .card {
     max-width: 300px;
+}
+
+#recipes {
+    overflow: auto;
 }
